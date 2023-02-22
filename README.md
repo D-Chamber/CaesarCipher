@@ -2,7 +2,7 @@
 ___
 
 ## TODO
-- [ ] Created Base Files
-- [ ] Make the main class
-- [ ] Create the Cryptoboy module
-- [ ] Setup arguments and what to run
+- [x] Created Base Files
+- [x] Make the main class
+- [x] Create the Cryptoboy module
+- [x] Setup arguments and what to run
