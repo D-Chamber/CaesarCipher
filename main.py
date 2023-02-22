@@ -11,12 +11,12 @@ class Main:
 
     def run(self):
         if self.arg == '-e':
-            Cryptoboy.encrypt(self.var1, self.var2, self.var3)
+            Cryptoboy.encrypt(self.var1, int(self.var2), self.var3)
         elif self.arg == '-d':
-            Cryptoboy.decrypt(self.var1, self.var2, self.var3)
+            Cryptoboy.decrypt(self.var1, int(self.var2), self.var3)
         elif self.arg == '-c':
             if self.var2 == '-t':
-                Cryptoboy.crack(self.var1, self.var3)
+                Cryptoboy.crack(self.var1, float(self.var3))
             else:
                 print(f'{self.var2} is an invalid input.')
         else:
