@@ -121,25 +121,40 @@ def decrypt(file, key, outfile):
                     index = alphabet.index(char)
                     index = (index - key) % 26
                     plaintext += alphabet[index]
-                else:
+                else: # replaces everything that is not a letter with spaces since this file is not being written to a file.
                     plaintext += " "
 
             return plaintext
 
 
 def crack(file, threshold):
+    """
+    :param file: takes a string of the file that we are going to brute-force/decrypt
+    :param threshold: is the percent that the cracking needs to determine if it was successful.
+    :return: None
+    """
+
+    # Checks if the file exists within the current directory
     if not os.path.exists(file):
         print(f'{file} does not exist in current directory')
+
     else:
+        # initiates the value of best key and match_percentage
         bestkey: int = 0
         match_percentage: float = 0
 
-        for x in range(len(alphabet) + 1):
-            temp_decrypt = decrypt(file, x, None)
+        # this iterates through each key till the end of the length of the alphabet.
+        for key in range(len(alphabet) + 1):
+            # runs the decrypt function each time and delimits the word_list by either the " symbol or an empty space.
+            temp_decrypt = decrypt(file, key, None)
             word_list = re.split(" |\"", temp_decrypt)
+
+            # goes through the list again and removes empty string from the list.
             for i in word_list:
                 if len(i) == 0:
                     word_list.remove(i)
+
+            # runs the check function that returns a percentage that is used to determine which key is best.
             temp_percentage = check(word_list)
             if temp_percentage > match_percentage:
                 match_percentage = temp_percentage
@@ -154,6 +169,10 @@ def crack(file, threshold):
 
 
 def check(text):
+    """
+    :param text: just takes the list of words
+    :return: the percentage of matching words in the dictionary as a float
+    """
     text_list = text
 
     matches = 0
