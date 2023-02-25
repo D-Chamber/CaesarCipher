@@ -158,7 +158,7 @@ def crack(file, threshold):
             temp_percentage = check(word_list)
             if temp_percentage > match_percentage:
                 match_percentage = temp_percentage
-                bestkey = x
+                bestkey = key
 
         if match_percentage > threshold:
             print(f'Crack was successful using the key {bestkey}, with a {round(match_percentage*100, 2)}% using '

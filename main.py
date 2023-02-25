@@ -15,10 +15,11 @@ class Main:
         elif self.arg == '-d':
             Cryptoboy.decrypt(self.var1, int(self.var2), self.var3)
         elif self.arg == '-c':
-            if self.var2 == '-t':
+            if self.var2 == '-t' and 0 < float(self.var3) < 1:
                 Cryptoboy.crack(self.var1, float(self.var3))
             else:
-                print(f'{self.var2} is an invalid input.')
+                print(f'{self.var2} is an invalid input. Possibly the number you input is too high or low '
+                      f'of a number make sure to use a number (float) between 0 and 1.')
         else:
             print(f'{self.arg} is not a valid argument input.')
 
