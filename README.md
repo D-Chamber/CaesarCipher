@@ -8,8 +8,8 @@ ___
 - [x] Setup arguments and what to run
 - [x] Setup the Encryption and Decryption Algorithms
 - [x] Made sure to have the algorithm check if the file exists in the Current Directory or not.
-- [ ] Need to setup the cracking/bruteforce algorithm
-- [ ] create the Checking algorithm.
-- [ ] Document and comment the program.
-- [ ] Demonstrate Program
-- [ ] Take screenshots
+- [x] Need to setup the cracking/bruteforce algorithm
+- [x] create the Checking algorithm.
+- [x] Document and comment the program.
+- [x] Demonstrate Program
+- [x] Take screenshots
